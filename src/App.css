@@ -1,0 +1,2032 @@
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 헤더 */
+.header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.nav button:hover {
+  opacity: 0.8;
+}
+
+/* 배너 */
+.banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.banner-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* 섹션 공통 */
+section {
+  padding: 4rem 0;
+}
+
+section:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.last-updated {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* 검색 */
+.search-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #1e3c72;
+}
+
+.clear-search {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+}
+
+/* 탭 */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.tab {
+  padding: 1rem 2rem;
+  border: 2px solid #e1e8ed;
+  background: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.tab:hover {
+  border-color: #1e3c72;
+}
+
+.tab.active {
+  background: #1e3c72;
+  color: white;
+  border-color: #1e3c72;
+}
+
+/* 항공편 테이블 */
+.flights-table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.5fr 1fr 1fr 1fr 1fr;
+  background: #2c3e50;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  gap: 1rem;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.5fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e8ed;
+  gap: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.flight-number {
+  font-weight: bold;
+  color: #1e3c72;
+}
+
+.status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status.on-time {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.delayed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status.arrived {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.status.departed {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.status.cancelled {
+  background: #f5c6cb;
+  color: #721c24;
+}
+
+/* 시설 그리드 */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.facility-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+}
+
+.facility-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.facility-card h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.facility-description {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.facility-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 교통편 그리드 */
+.transport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.transport-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.transport-card:hover {
+  transform: translateY(-5px);
+}
+
+.transport-card h3 {
+  color: #1e3c72;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.transport-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: bold;
+  color: #666;
+}
+
+.value {
+  color: #1e3c72;
+  font-weight: bold;
+}
+
+.description {
+  color: #666;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* 공지사항 */
+.notice-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.notice-item {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid #e1e8ed;
+  transition: all 0.3s ease;
+}
+
+.notice-item:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.notice-item.important {
+  border-left-color: #dc3545;
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.notice-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.notice-badge {
+  background: #dc3545;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.notice-title {
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.notice-content {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 푸터 */
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  color: #ecf0f1;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #34495e;
+  opacity: 0.7;
+}
+
+/* 로딩 및 에러 상태 */
+.loading-container, .error-container, .no-data-container {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1e3c72;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  color: #dc3545;
+}
+
+.error-message {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+
+  .banner h2 {
+    font-size: 2rem;
+  }
+
+  .banner-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .table-header, .table-row {
+    grid-template-columns: 1fr 1fr 1.5fr 1fr;
+    font-size: 0.9rem;
+  }
+
+  .table-header div:nth-child(5),
+  .table-header div:nth-child(6),
+  .table-row div:nth-child(5),
+  .table-row div:nth-child(6) {
+    display: none;
+  }
+
+  .tab-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    width: 200px;
+  }
+
+  .facilities-grid,
+  .transport-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-container {
+    margin: 0 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .banner {
+    padding: 2rem 0;
+  }
+
+  .banner h2 {
+    font-size: 1.5rem;
+  }
+
+  .table-header, .table-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .table-header div:nth-child(n+3),
+  .table-row div:nth-child(n+3) {
+    display: none;
+  }
+
+  .facility-card,
+  .transport-card {
+    padding: 1.5rem;
+  }
+}
+
+/* 혼잡도 관련 색상 */
+.congestion-low {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.congestion-medium {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  color: #856404;
+  border-color: #ffeaa7;
+}
+
+.congestion-high {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+/* 히어로 섹션 */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.congestion-summary {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-card {
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 120px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.summary-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.summary-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* AI 예측 섹션 */
+.ai-prediction-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.prediction-controls {
+  display: flex;
+  gap: 2rem;
+  align-items: end;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.control-group select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+.predict-btn {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.predict-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.predict-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* AI 예측 결과 */
+.prediction-result {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+.result-header h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.confidence-badge {
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.result-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.main-recommendation {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.recommendation-time {
+  margin-bottom: 1.5rem;
+}
+
+.time-label {
+  display: block;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.time-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.current-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.congestion-level {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.wait-time {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.prediction-factors {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.prediction-factors h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.prediction-factors ul {
+  list-style: none;
+  padding: 0;
+}
+
+.prediction-factors li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e1e8ed;
+  color: #666;
+}
+
+.prediction-factors li:last-child {
+  border-bottom: none;
+}
+
+/* 혼잡도 대시보드 */
+.congestion-dashboard {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-info h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.view-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #e1e8ed;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.view-btn:hover {
+  border-color: #667eea;
+}
+
+.view-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+/* 통계 그리드 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+}
+
+.stat-info h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.2rem;
+}
+
+.stat-info p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 필터 컨트롤 */
+.filter-controls {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.filter-group select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* 혼잡도 그리드 */
+.congestion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.congestion-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.congestion-card:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.flight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.flight-id {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.airline {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.congestion-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.location-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.terminal, .area {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.destination {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.8rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric .label {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.metric .value {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* 알림 섹션 */
+.alerts-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.alerts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.alert-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.alert-card.high-congestion {
+  border-left: 4px solid #dc3545;
+}
+
+.alert-card.low-congestion {
+  border-left: 4px solid #28a745;
+}
+
+.alert-icon {
+  font-size: 2rem;
+}
+
+.alert-content h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.alert-content p {
+  color: #666;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* 통계 섹션 */
+.statistics-section {
+  padding: 4rem 0;
+}
+
+.stats-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-item h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+}
+
+.terminal-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 혼잡도 분포 차트 */
+.congestion-distribution {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.congestion-distribution h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.distribution-chart {
+  width: 100%;
+}
+
+.chart-bar {
+  display: flex;
+  height: 60px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.bar-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.bar-section:hover {
+  filter: brightness(1.1);
+}
+
+/* 터미널 뷰 */
+.terminal-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.terminal-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+.terminal-header h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.terminal-stats {
+  display: flex;
+  gap: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.area-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.area-card h4 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.area-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* 구역 뷰 */
+.area-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.area-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+.area-header h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.congestion-distribution {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.flights-in-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.flight-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  align-items: center;
+}
+
+/* AI 뷰 */
+.ai-view {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.ai-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+.ai-header h3 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.ai-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.ai-predictions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.ai-prediction-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 2px solid #e1e8ed;
+}
+
+.prediction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.prediction-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recommended-time {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.recommended-time h4 {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.prediction-factors {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e1e8ed;
+}
+
+.prediction-factors h5 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.prediction-factors ul {
+  list-style: none;
+  padding: 0;
+}
+
+.prediction-factors li {
+  padding: 0.5rem 0;
+  color: #666;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .congestion-summary {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .prediction-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .control-group select {
+    min-width: auto;
+  }
+  
+  .result-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .view-controls {
+    justify-content: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .congestion-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .alerts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-dashboard {
+    grid-template-columns: 1fr;
+  }
+  
+  .ai-predictions {
+    grid-template-columns: 1fr;
+  }
+  
+  .terminal-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .flight-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* 검색 섹션 스타일 */
+.search-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-filters {
+  margin-bottom: 24px;
+}
+
+.search-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.search-input-group {
+  flex: 2;
+  min-width: 300px;
+}
+
+.search-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  background: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  height: fit-content;
+}
+
+.reset-button:hover {
+  background: #4b5563;
+}
+
+/* 검색 결과 스타일 */
+.search-results {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.results-header {
+  margin-bottom: 20px;
+}
+
+.results-header h3 {
+  color: #1f2937;
+  margin: 0;
+  font-size: 18px;
+}
+
+.flight-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flight-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.flight-table th {
+  background: #f3f4f6;
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.flight-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.flight-table tr:hover {
+  background: #f9fafb;
+}
+
+.flight-id {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.airline-code {
+  background: #3b82f6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+
+.flight-type {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.flight-type.departure {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.flight-type.arrival {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.terminal {
+  font-weight: 600;
+  color: #7c3aed;
+}
+
+.congestion-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  min-width: 60px;
+}
+
+.congestion-badge.large {
+  padding: 12px 24px;
+  font-size: 16px;
+  min-width: 100px;
+}
+
+.congestion-low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.congestion-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.congestion-high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.flight-status {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.detail-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.detail-button:hover {
+  background: #2563eb;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+}
+
+/* 터미널별 현황 스타일 */
+.terminal-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.terminal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.terminal-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.terminal-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+.terminal-stats {
+  margin-bottom: 16px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.congestion-summary {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.congestion-item {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 구역별 현황 스타일 */
+.area-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.area-card {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.area-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.area-card h3 {
+  margin: 0 0 12px 0;
+  color: #1f2937;
+  font-size: 16px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3b82f6;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.area-congestion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.congestion-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+}
+
+.congestion-dot.congestion-low {
+  background: #10b981;
+}
+
+.congestion-dot.congestion-medium {
+  background: #f59e0b;
+}
+
+.congestion-dot.congestion-high {
+  background: #ef4444;
+}
+
+/* 상세 정보 스타일 */
+.detail-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.flight-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.flight-detail-header h3 {
+  margin: 0;
+  color: #1f2937;
+}
+
+.back-button {
+  background: #6b7280;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background: #4b5563;
+}
+
+.flight-info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flight-basic-info h2 {
+  margin: 0 0 12px 0;
+  font-size: 28px;
+  font-family: 'Courier New', monospace;
+}
+
+.flight-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flight-meta span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.overall-congestion {
+  text-align: center;
+}
+
+.overall-congestion h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.overall-congestion p {
+  margin: 12px 0 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.area-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.area-detail-grid h4 {
+  grid-column: 1 / -1;
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  font-size: 18px;
+}
+
+.area-detail-card {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.area-detail-card h5 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 16px;
+  text-align: center;
+}
+
+.area-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.congestion-info,
+.wait-info,
+.passenger-info {
+  text-align: center;
+}
+
+.wait-info span,
+.passenger-info span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* 전체 현황 스타일 개선 */
+.overview-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.stat-card .stat-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.congestion-distribution {
+  background: #f8fafc;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.congestion-distribution h3 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  text-align: center;
+}
+
+.distribution-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.distribution-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.distribution-item .label {
+  min-width: 60px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.bar {
+  flex: 1;
+  height: 24px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}
+
+.fill.congestion-low {
+  background: #10b981;
+}
+
+.fill.congestion-medium {
+  background: #f59e0b;
+}
+
+.fill.congestion-high {
+  background: #ef4444;
+}
+
+.distribution-item .count {
+  min-width: 40px;
+  text-align: right;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .search-row {
+    flex-direction: column;
+  }
+  
+  .search-input-group {
+    min-width: auto;
+  }
+  
+  .filter-group {
+    min-width: auto;
+  }
+  
+  .flight-table {
+    overflow-x: auto;
+  }
+  
+  .flight-table table {
+    min-width: 800px;
+  }
+  
+  .flight-info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .terminal-grid,
+  .area-grid,
+  .area-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
